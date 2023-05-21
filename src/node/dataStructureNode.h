@@ -5,8 +5,9 @@
 
 using namespace godot;
 
-namespace linkedList {
-class Node {
+/// @brief 单链表的节点
+namespace linkedList  {
+class Node{
 public:
     Node();
     explicit Node(const Variant& element);

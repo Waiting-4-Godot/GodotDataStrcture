@@ -1,0 +1,8 @@
+[configuration]
+
+entry_symbol = "dataStructure_library_init"
+
+[libraries]
+
+
+windows.debug.x86_64 = "dataStructure.windows.template_debug.x86_64.dll"

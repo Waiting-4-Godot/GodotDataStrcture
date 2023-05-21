@@ -5,9 +5,11 @@ import sys
 
 env = SConscript("godot-cpp/SConstruct")
 env.Append(CPPPATH = "src/")
-# env.Append(CPPPATH = "src/node")
-# env.Append(CPPPATH = "src/list/linkedList")
+env.Append(CPPPATH = "src/node/")
+env.Append(CPPPATH = "src/list/linkedList/")
 src = Glob("src/*.cpp")
+src = src + Glob("src/node/*.cpp")
+src = src + Glob("src/list/linkedList/*.cpp")
 
 if env['platform'] == 'linux':
 	pass
