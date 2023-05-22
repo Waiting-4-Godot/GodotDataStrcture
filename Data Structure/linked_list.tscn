@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp76x0s8uh73e"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_e3xue"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e3xue")
+
+[node name="LinkedList" type="LinkedList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.813
+anchor_bottom = 1.0
+offset_right = 7.42395
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InsertButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 996.0
+offset_top = 130.0
+offset_right = 1074.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 20
+text = "insert"
+
+[node name="IndexLineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 1041.0
+offset_top = 29.0
+offset_right = 1122.81
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 20
+
+[node name="ElementLineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 75.0
+offset_right = 1124.0
+offset_bottom = 114.0
+
+[node name="IndexLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 948.0
+offset_top = 32.0
+offset_right = 1029.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 20
+text = "Index:"
+
+[node name="ElementLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 76.0
+offset_right = 1026.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 20
+text = "Element:"
+
+[connection signal="pressed" from="InsertButton" to="." method="_on_insert_button_pressed"]

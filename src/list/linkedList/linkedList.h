@@ -4,11 +4,12 @@
 #include "dataStructureNode.h"
 
 #include <godot_cpp/classes/control.hpp>
+#include <godot_cpp/classes/grid_container.hpp>
 
 using namespace godot;
 
-class LinkedList : public Control {
-    GDCLASS(LinkedList, Control)
+class LinkedList : public GridContainer {
+    GDCLASS(LinkedList, GridContainer)
 protected:
 	static void _bind_methods();
 
@@ -21,6 +22,7 @@ public:
     int size() const;
     void insert(int theIndex, const Variant& element);
     Variant get_element(int theIndex) const;
+    String get_next(int theIndex) const;
 
 public:
     void set_listSize(const int listSize);

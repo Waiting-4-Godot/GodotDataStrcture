@@ -9,6 +9,7 @@ void LinkedList::_bind_methods() {
     ClassDB::bind_method(D_METHOD("isEmpty"), &LinkedList::isEmpty);
     ClassDB::bind_method(D_METHOD("insert", "theIndex", "element"), &LinkedList::insert);
     ClassDB::bind_method(D_METHOD("get_element", "theIndex"), &LinkedList::get_element);
+    ClassDB::bind_method(D_METHOD("get_next", "theIndex"), &LinkedList::get_next);
 
     ClassDB::add_property("LinkedList",
         PropertyInfo(Variant::INT, "listSize"),
@@ -61,13 +62,28 @@ void LinkedList::insert(int theIndex, const Variant& element) {
 Variant LinkedList::get_element(int theIndex) const { 
     checkIndex(theIndex);
    
-
     linkedList::Node* targetNode = theFirstNode;
     for (int i = 0; i < theIndex; ++i) {
         targetNode = targetNode->next;
     }
 
     return targetNode->element;
+}
+
+/// @brief 返回指定索引的节点的next
+/// @param theIndex 指定索引
+/// @return next域
+String LinkedList::get_next(int theIndex) const { 
+    checkIndex(theIndex);
+   
+    linkedList::Node* targetNode = theFirstNode;
+    for (int i = 0; i < theIndex; ++i) {
+        targetNode = targetNode->next;
+    }
+
+    String next = String((const char*)targetNode->next);
+    UtilityFunctions::print(next);
+    return next;
 }
 
 void LinkedList::set_listSize(const int listSize) {
@@ -80,6 +96,7 @@ int LinkedList::get_listSize() const {
 
 void LinkedList::checkIndex(int theIndex) const {
     if (theIndex < 0 || theIndex > listSize) {
+        UtilityFunctions::print("illegal index");
         throw("illegal index");
     }
 }
