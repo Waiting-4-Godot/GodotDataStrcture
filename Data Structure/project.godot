@@ -14,3 +14,7 @@ config/name="Data Structure"
 run/main_scene="res://linked_list.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""

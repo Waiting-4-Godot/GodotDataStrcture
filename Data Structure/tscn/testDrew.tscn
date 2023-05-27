@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlm2rqfq03mcm"]
+
+[ext_resource type="Script" path="res://gdxcript/Control.gd" id="1_e5rbk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5rbk")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.035
+offset_left = 145.0
+offset_top = 76.0
+offset_right = 150.75
+offset_bottom = 83.32
+pivot_offset = Vector2(24, 13)
+theme_override_font_sizes/font_size = 19
+text = "hello"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 150.0
+offset_right = 645.0
+offset_bottom = 176.0
+pivot_offset = Vector2(0, 15)
+theme_override_font_sizes/font_size = 19
+text = "world"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 80.0
+offset_top = 47.0
+offset_right = 129.95
+offset_bottom = 70.224
+pivot_offset = Vector2(-1, -2)
+
+[node name="Line2D" type="Line2D" parent="."]
+begin_cap_mode = 1
+end_cap_mode = 2
+
+[connection signal="draw" from="Label" to="." method="_on_label_draw"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -47,7 +47,7 @@ void LinkedList::insert(int theIndex, const Variant& element) {
     } else {
         linkedList::Node* preNode = theFirstNode;
 
-        for (int i = 0; i < theIndex; ++i) {
+        for (int i = 1; i < theIndex; ++i) {
             preNode = preNode->next;
         }
         preNode->next = new linkedList::Node(element, preNode->next);

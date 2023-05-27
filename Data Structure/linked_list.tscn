@@ -11,14 +11,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e3xue")
 
-[node name="LinkedList" type="LinkedList" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.813
+anchor_right = 0.806
 anchor_bottom = 1.0
-offset_right = 7.42395
+offset_right = 3.48792
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LinkedList" type="LinkedList" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+columns = 5
 
 [node name="InsertButton" type="Button" parent="."]
 layout_mode = 0
